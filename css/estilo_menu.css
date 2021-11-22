@@ -1,0 +1,117 @@
+@import './estilo_corpo.css';
+
+.header{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg_header);
+}
+
+.logo_bar{
+    padding: 20px;
+    color: var(--text_color);
+    font-size: 40px;
+    font-weight: bold;
+}
+
+#btt_menu{
+    display: none;
+}
+
+label{
+    display: none;
+    position: absolute;
+    padding: 10px;
+    color: var(--text_color);
+    font-size: 50px;
+    cursor: pointer;
+}
+
+ul{
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    background-color: var(--bg_nav);
+    overflow: hidden;
+}
+
+li{
+    float: left;
+}
+
+li a, .btt_drop{
+    display: inline-block;
+    color: var(--text_color);
+    text-align: center;
+    padding: 17px 16px;
+    text-decoration: none;
+}
+
+li a:hover, .dropdown:hover, .btt_drop:hover{
+    transition: 0.6s;
+    background-color: var(--bg_hover);
+}
+
+.dropdown_content{
+    display: none;
+    position: absolute;
+    background-color: var(--bg_dropdown);
+    min-width: 160px;
+    z-index: 1;
+}
+
+.dropdown_content a{
+    display: block;
+    color: var(--text_dropdown);
+    text-align: left;
+    padding: 14px 16px;
+}
+
+.dropdown_content a:hover{
+    background-color: var(--hover_dropdown);
+}
+
+.dropdown:hover .dropdown_content{
+    display: block;
+}
+
+@media(max-width: 800px){
+
+    .header{
+        text-align: center;
+    }
+
+    label{
+        display: block;
+    }
+
+    .nav{
+        display: none;
+    }
+
+    #btt_menu:checked ~ .nav{
+        display: block;
+    }
+
+    .nav li{
+        float: none;
+    }
+
+    .nav .dropdown_content{
+        position: relative;
+    }
+
+    .nav .dropdown_content a{
+        text-align: center;
+    }
+
+}
+
+@media(max-width: 375px){
+    .logo_bar{
+        font-size: 30px;
+    }
+
+    label{
+        font-size: 40px;
+    }
+}
